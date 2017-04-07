@@ -100,7 +100,7 @@ class ResizingIntSet
   def resize!
     nums_to_move = @store.flatten
     @count = 0
-    @store += Array.new(num_buckets) { Array.new }
+    @store = Array.new(num_buckets * 2) { Array.new }
     nums_to_move.each { |num| insert(num) }
   end
 end
